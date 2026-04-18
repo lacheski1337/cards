@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>250 Cards Anti-Bullying</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yellow:   #FFD93D;
+      --yellow-d: #F4C100;
+      --coral:    #FF6B6B;
+      --coral-d:  #e84f4f;
+      --sky:      #74C7EC;
+      --sky-d:    #4BB3E0;
+      --mint:     #6BCB77;
+      --mint-d:   #4DB85A;
+      --purple:   #C77DFF;
+      --purple-d: #A855F7;
+      --pink:     #FF9ECD;
+      --orange:   #FF9F43;
+      --bg:       #FFFBF0;
+      --dark:     #2D2D2D;
+      --mid:      #555;
+      --light:    #fff;
+      --radius:   18px;
+      --shadow:   0 6px 30px rgba(0,0,0,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITIES ──────────────────────────────── */
+    .container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+    .text-center { text-align: center; }
+    .mt-sm { margin-top: 14px; }
+    .mt-md { margin-top: 28px; }
+    .mt-lg { margin-top: 48px; }
+
+    /* ── PLACEHOLDER IMAGES ─────────────────────── */
+    .img-placeholder {
+      background: linear-gradient(135deg, #e0f0ff 0%, #fce4ec 100%);
+      border: 3px dashed #b0c4de;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #90a4ae;
+      font-size: .85rem;
+      font-weight: 700;
+      gap: 8px;
+      padding: 24px;
+    }
+    .img-placeholder svg { opacity: .45; }
+
+    /* ── HEADER STRIPE ──────────────────────────── */
+    .top-stripe {
+      background: var(--coral);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .5px;
+    }
+
+    /* ── HERO ───────────────────────────────────── */
+    .hero {
+      background: linear-gradient(160deg, #fff9e6 0%, #fff0f5 100%);
+      padding: 64px 20px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: -80px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: rgba(255, 217, 61, .22);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255, 107, 107, .15);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--dark);
+      font-weight: 900;
+      font-size: .8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 40px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.6rem, 5vw, 2.7rem);
+      font-weight: 800;
+      line-height: 1.25;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--coral);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 560px;
+      margin: 0 auto 36px;
+    }
+    .hero-img-wrap {
+      max-width: 540px;
+      margin: 0 auto 32px;
+    }
+    .hero-img-wrap .img-placeholder { min-height: 280px; font-size: 1rem; }
+    .product-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--yellow);
+      border: 4px solid var(--yellow-d);
+      border-radius: 20px;
+      padding: 18px 36px;
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 900;
+      gap: 2px;
+      box-shadow: 0 4px 0 var(--yellow-d);
+    }
+    .product-badge .label { font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; color: #7a6000; }
+    .product-badge .name { font-size: 1.6rem; color: var(--dark); line-height: 1.1; }
+    .product-badge .tagline { font-size: .82rem; color: #5a4800; max-width: 240px; }
+
+    /* ── SECTION BASE ───────────────────────────── */
+    section { padding: 56px 20px; }
+
+    /* ── PROBLEM ────────────────────────────────── */
+    .problem {
+      background: linear-gradient(135deg, #fff5f5 0%, #fff9f0 100%);
+      border-top: 5px dashed #ffc9c9;
+      border-bottom: 5px dashed #ffc9c9;
+    }
+    .problem h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.3rem, 4vw, 1.9rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .problem h2 span { color: var(--coral); }
+    .problem-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+    .prob-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      border-left: 5px solid var(--coral);
+      box-shadow: var(--shadow);
+      font-size: .95rem;
+    }
+    .prob-card .icon { font-size: 1.6rem; margin-bottom: 8px; }
+    .problem-text {
+      text-align: center;
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+    .problem-text strong { color: var(--coral-d); }
+
+    /* ── PRODUCT INTRO ──────────────────────────── */
+    .product-intro { text-align: center; }
+    .product-intro h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+    .product-intro h2 span { color: var(--mint-d); }
+    .product-intro p { font-size: 1.05rem; color: var(--mid); max-width: 600px; margin: 0 auto 36px; }
+    .product-intro .img-placeholder { min-height: 320px; max-width: 560px; margin: 0 auto; }
+
+    /* ── STAGES ─────────────────────────────────── */
+    .stages { background: linear-gradient(135deg, #f0fff4 0%, #f0f4ff 100%); }
+    .stages-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .stages-sub {
+      text-align: center;
+      color: var(--mid);
+      font-size: .95rem;
+      margin-bottom: 36px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .stages-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+    @media (max-width: 480px) { .stages-grid { grid-template-columns: 1fr; } }
+    .stage-card {
+      border-radius: var(--radius);
+      padding: 26px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .stage-card::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.3);
+    }
+    .stage-card.s1 { background: linear-gradient(135deg, #FF6B6B, #FF8E8E); color: #fff; }
+    .stage-card.s2 { background: linear-gradient(135deg, #74C7EC, #93D5F3); color: #fff; }
+    .stage-card.s3 { background: linear-gradient(135deg, #6BCB77, #8CD895); color: #fff; }
+    .stage-card.s4 { background: linear-gradient(135deg, #C77DFF, #D89FFF); color: #fff; }
+    .stage-num {
+      display: inline-block;
+      background: rgba(255,255,255,.35);
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      line-height: 36px;
+      font-weight: 900;
+      font-size: .85rem;
+      margin-bottom: 10px;
+    }
+    .stage-card h3 { font-family: 'Baloo 2', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
+    .stage-card p { font-size: .85rem; opacity: .9; }
+    .stages .img-placeholder { min-height: 240px; max-width: 560px; margin: 0 auto; }
+
+    /* ── AUDIENCE ───────────────────────────────── */
+    .audience { text-align: center; background: #fff; }
+    .audience h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 900;
+      margin-bottom: 28px;
+    }
+    .audience h2 span { color: var(--sky-d); }
+    .audience-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .aud-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #e8f4fd, #f0e8fd);
+      border: 2px solid #c5dfef;
+      border-radius: 40px;
+      padding: 10px 22px;
+      font-weight: 800;
+      font-size: .95rem;
+    }
+    .audience .img-placeholder { min-height: 220px; max-width: 560px; margin: 0 auto 28px; }
+    .audience-cta-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--mid);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ── SOCIAL PROOF ───────────────────────────── */
+    .social-proof { background: linear-gradient(135deg, #fff9e6 0%, #fff5f5 100%); }
+    .social-proof h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .social-proof h2 span { color: var(--orange); }
+
+    /* ── CAROUSEL ───────────────────────────────── */
+    .carousel-wrap { position: relative; overflow: hidden; }
+    .carousel-track {
+      display: flex;
+      transition: transform .45s cubic-bezier(.4,0,.2,1);
+    }
+    .testi-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 32px 26px 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+      flex: 0 0 100%;
+      min-height: 200px;
+    }
+    .testi-card::before {
+      content: '"';
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 5rem;
+      color: var(--yellow);
+      position: absolute;
+      top: -4px; left: 16px;
+      line-height: 1;
+    }
+    .testi-stars { color: #FFD93D; font-size: 1.05rem; margin-bottom: 10px; }
+    .testi-text {
+      font-style: italic;
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      padding-top: 20px;
+      line-height: 1.75;
+    }
+    .testi-footer { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--yellow), var(--coral));
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: 1rem; color: #fff; flex-shrink: 0;
+    }
+    .testi-author { font-weight: 800; font-size: .9rem; color: var(--dark); }
+    .testi-role { font-size: .8rem; color: #999; margin-top: 2px; }
+    .carousel-dots {
+      display: flex; justify-content: center; gap: 8px; margin-top: 22px;
+    }
+    .carousel-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: #ddd; border: none; cursor: pointer;
+      transition: background .25s, transform .2s;
+    }
+    .carousel-dot.active { background: var(--coral); transform: scale(1.3); }
+    .carousel-btns {
+      display: flex; justify-content: center; gap: 12px; margin-top: 16px;
+    }
+    .carousel-btn {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--yellow); border: none; cursor: pointer;
+      font-size: 1.1rem; font-weight: 900;
+      box-shadow: 0 3px 0 var(--yellow-d);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .carousel-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 0 var(--yellow-d); }
+    .carousel-btn:active { transform: translateY(1px); box-shadow: 0 1px 0 var(--yellow-d); }
+
+    /* ── HOW IT WORKS ───────────────────────────── */
+    .how { background: #fff; text-align: center; }
+    .how h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 900;
+      margin-bottom: 36px;
+    }
+    .how h2 span { color: var(--mint-d); }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 640px;
+      margin: 0 auto 36px;
+    }
+    @media (max-width: 480px) { .steps-grid { grid-template-columns: 1fr; } }
+    .step-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 28px 18px;
+      box-shadow: var(--shadow);
+      border-top: 5px solid var(--yellow);
+    }
+    .step-card:nth-child(2) { border-top-color: var(--coral); }
+    .step-card:nth-child(3) { border-top-color: var(--sky); }
+    .step-card:nth-child(4) { border-top-color: var(--mint); }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--yellow);
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+    .step-card:nth-child(2) .step-num { background: var(--coral); color: #fff; }
+    .step-card:nth-child(3) .step-num { background: var(--sky); }
+    .step-card:nth-child(4) .step-num { background: var(--mint); }
+    .step-card h3 { font-weight: 800; font-size: 1rem; margin-bottom: 10px; }
+    .step-card .img-placeholder { min-height: 110px; }
+
+    .delivery-box {
+      background: linear-gradient(135deg, #f0fff4, #fff9e6);
+      border: 3px solid var(--mint);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+    .delivery-box strong { color: var(--mint-d); }
+    .delivery-box .img-placeholder { min-height: 160px; margin-top: 18px; }
+
+    /* ── BONUSES ────────────────────────────────── */
+    .bonuses { background: linear-gradient(160deg, #fff0f5 0%, #f5f0ff 100%); }
+    .bonuses h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .bonuses h2 span { color: var(--purple-d); }
+    .bonuses-sub { text-align: center; color: var(--mid); margin-bottom: 36px; }
+    .bonuses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .bonus-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 20px 16px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .bonus-badge {
+      position: absolute;
+      top: 12px; right: -22px;
+      background: var(--coral);
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 900;
+      padding: 3px 32px;
+      transform: rotate(35deg);
+      letter-spacing: .5px;
+    }
+    .bonus-num {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: #fff;
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 900;
+      font-size: .75rem;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .bonus-card .img-placeholder { min-height: 100px; margin-bottom: 12px; }
+    .bonus-card h3 { font-size: .95rem; font-weight: 800; margin-bottom: 6px; }
+    .bonus-card p { font-size: .82rem; color: #777; margin-bottom: 10px; }
+    .bonus-price {
+      font-size: .8rem;
+    }
+    .bonus-price s { color: #bbb; }
+    .bonus-price .free { color: var(--mint-d); font-weight: 900; font-size: .95rem; }
+
+    /* ── CTA MAIN ───────────────────────────────── */
+    .cta-main {
+      background: linear-gradient(135deg, #fff9e6 0%, #fff0f5 100%);
+      text-align: center;
+      padding: 64px 20px;
+    }
+
+    /* ── BTN ────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--mint), #4ecf5c);
+      color: #fff;
+      font-family: 'Baloo 2', sans-serif;
+      font-weight: 900;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      padding: 18px 38px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 6px 0 var(--mint-d), 0 10px 30px rgba(107,203,119,.35);
+      transition: transform .15s, box-shadow .15s;
+      letter-spacing: .3px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 9px 0 var(--mint-d), 0 14px 36px rgba(107,203,119,.4); }
+    .btn:active { transform: translateY(2px); box-shadow: 0 3px 0 var(--mint-d); }
+    .btn-pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 0 var(--mint-d), 0 10px 30px rgba(107,203,119,.35); }
+      50% { box-shadow: 0 6px 0 var(--mint-d), 0 10px 50px rgba(107,203,119,.55); }
+    }
+    .btn-sub { font-size: .8rem; color: var(--mid); margin-top: 10px; }
+
+    /* ── URGENCY ────────────────────────────────── */
+    .urgency-text {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--mid);
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+    .urgency-text strong { color: var(--coral-d); }
+
+    /* ── PRICING SUMMARY ────────────────────────── */
+    .pricing-box {
+      background: #fff;
+      border-radius: 24px;
+      padding: 36px 28px;
+      max-width: 480px;
+      margin: 0 auto 36px;
+      box-shadow: 0 10px 50px rgba(0,0,0,.12);
+      border: 3px solid var(--yellow);
+    }
+    .pricing-box .img-placeholder { min-height: 120px; margin-bottom: 18px; }
+    .pricing-box h3 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .pricing-list { list-style: none; margin-bottom: 20px; text-align: left; }
+    .pricing-list li {
+      padding: 7px 0;
+      border-bottom: 1.5px dashed #ffe082;
+      font-size: .95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pricing-list li:last-child { border-bottom: none; }
+    .pricing-list .check { color: var(--mint-d); font-size: 1.1rem; }
+    .total-old { font-size: .9rem; color: #bbb; text-decoration: line-through; }
+    .total-new {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--coral);
+      line-height: 1.1;
+    }
+    .total-new small { font-size: 1rem; color: var(--mid); }
+
+    /* ── GUARANTEE ──────────────────────────────── */
+    .guarantee { background: #fff; }
+    .guarantee-box {
+      background: linear-gradient(135deg, #f0fff4, #e8f4fd);
+      border: 3px solid var(--mint);
+      border-radius: 24px;
+      padding: 36px 28px;
+      max-width: 620px;
+      margin: 0 auto;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    @media (max-width: 520px) { .guarantee-box { flex-direction: column; align-items: center; text-align: center; } }
+    .guarantee-icon {
+      font-size: 3.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .guarantee-box h3 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--mint-d);
+      margin-bottom: 10px;
+    }
+    .guarantee-box p { font-size: .95rem; color: var(--mid); line-height: 1.75; }
+
+    /* ── FAQ ────────────────────────────────────── */
+    .faq { background: linear-gradient(135deg, #fff9e6 0%, #f5f0ff 100%); }
+    .faq h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.3rem, 4vw, 2rem);
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .faq h2 span { color: var(--sky-d); }
+    .faq-list { max-width: 680px; margin: 0 auto; }
+    .faq-item {
+      background: #fff;
+      border-radius: var(--radius);
+      margin-bottom: 14px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px rgba(0,0,0,.07);
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--dark);
+      text-align: left;
+      gap: 12px;
+    }
+    .faq-arrow {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      transition: transform .25s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease, padding .25s;
+      padding: 0 22px;
+      font-size: .95rem;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding: 0 22px 20px; }
+
+    /* ── FINAL CTA ──────────────────────────────── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--yellow), var(--orange));
+      text-align: center;
+      padding: 64px 20px;
+    }
+    .final-cta h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: clamp(1.4rem, 4.5vw, 2.3rem);
+      font-weight: 900;
+      color: var(--dark);
+      max-width: 640px;
+      margin: 0 auto 28px;
+      line-height: 1.3;
+    }
+    .final-cta .btn { background: linear-gradient(135deg, var(--coral), #ff4d4d); box-shadow: 0 6px 0 var(--coral-d), 0 10px 30px rgba(255,107,107,.4); }
+    .final-cta .btn:hover { box-shadow: 0 9px 0 var(--coral-d), 0 14px 40px rgba(255,107,107,.5); }
+    .final-cta .btn-sub { color: #5a3800; }
+
+    /* ── FOOTER ─────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      color: #aaa;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: .82rem;
+    }
+
+    /* ── DECORATIVE DOTS ────────────────────────── */
+    .dots-sep {
+      text-align: center;
+      letter-spacing: 6px;
+      font-size: 1.4rem;
+      padding: 8px 0;
+      opacity: .35;
+    }
+
+    /* ── SECTION TITLES SHARED ──────────────────── */
+    .section-tag {
+      display: block;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--yellow);
+      color: #7a5e00;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 30px;
+      margin-bottom: 14px;
+    }
+    .section-tag.pink { background: #ffe0ec; color: #a0204f; }
+    .section-tag.blue { background: #e0f0ff; color: #1a4f82; }
+    .section-tag.green { background: #e0ffea; color: #1a6633; }
+    .section-tag.purple { background: #f0e0ff; color: #5a1a99; }
+  </style>
+
+
+
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wdd9cdycbc");
+</script>
+
+
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  data-utmify-ignore-iframe
+  data-utmify-is-cartpanda
+  async
+  defer
+></script>
+
+</head>
+<body>
+
+<!-- TOP STRIPE -->
+<div class="top-stripe">
+  🌟 Material digital — acesso imediato após a compra · 30 dias de garantia total
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Para professores, psicólogos, pedagogos e pais</span>
+    <h1>Existe uma criança na sua sala que já <em>desistiu de tentar</em> se encaixar.</h1>
+    <p class="hero-sub">Você sabe quem ela é. E provavelmente já se perguntou: <strong>"O que eu posso fazer de diferente?"</strong></p>
+
+    <div class="hero-img-wrap">
+      <img src="public/hero.jpg" alt="250 Cards Anti-Bullying" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow);" />
+    </div>
+
+    <div class="product-badge">
+      <span class="label">✨ Apresentamos</span>
+      <span class="name">250 CARDS ANTI-BULLYING</span>
+      <span class="tagline">para abrir conversas que palavras comuns não conseguem</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PROBLEM ════════ -->
+<section class="problem">
+  <div class="container">
+    <span class="section-tag pink">Você já passou por isso?</span>
+    <h2><span>VOCÊ, QUE É PROFESSOR, PSICÓLOGO,<br>PEDAGOGO OU MÃE/PAI.</span></h2>
+
+    <div class="problem-cards">
+      <div class="prob-card">
+        <div class="icon">👀</div>
+        Você já presenciou uma criança isolada no canto da sala enquanto os outros brincavam.
+      </div>
+      <div class="prob-card">
+        <div class="icon">💬</div>
+        Já ouviu apelidos sendo lançados como se fossem brincadeira e viu o olhar de quem recebeu.
+      </div>
+      <div class="prob-card">
+        <div class="icon">🗣️</div>
+        Já tentou conversar, explicar, chamar atenção... e percebeu que as palavras certas simplesmente não chegaram.
+      </div>
+    </div>
+
+    <p class="problem-text">
+      O problema <strong>não é falta de vontade</strong>. É falta de ferramenta.<br><br>
+      Bullying não se resolve com palestra. Não se resolve com cartaz na parede. Ele se resolve com <strong>conversa real</strong> no nível emocional da criança. E para essa conversa acontecer, <strong>alguém precisa abrir a porta.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ════════ PRODUCT INTRO ════════ -->
+<section class="product-intro">
+  <div class="container">
+    <span class="section-tag green">A solução</span>
+    <h2>É por isso que criamos os<br><span>250 CARDS ANTI-BULLYING</span></h2>
+    <p>São 250 cartas práticas, pensadas por etapas, que transformam o silêncio em conversa e a conversa em mudança de comportamento.</p>
+
+    <img src="public/cards.jpg" alt="250 Cards Anti-Bullying" style="width:100%;max-width:560px;border-radius:var(--radius);box-shadow:var(--shadow);margin:0 auto 28px;display:block;"/>
+
+    <div style="background:linear-gradient(135deg,#fff9e6,#fff0f5);border-radius:var(--radius);padding:24px 28px;max-width:520px;margin:0 auto;border:3px dashed var(--yellow);">
+      <p style="font-family:'Baloo 2',sans-serif;font-size:1.1rem;font-weight:900;margin-bottom:4px;">UM BARALHO. 250 CARTAS.</p>
+      <p style="font-size:1.05rem;color:var(--coral-d);font-weight:800;">INÚMERAS CONVERSAS QUE CURAM.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ STAGES ════════ -->
+<section class="stages">
+  <div class="container">
+    <span class="section-tag blue">A jornada</span>
+    <h2 class="stages-title">Uma Jornada em 4 Etapas</h2>
+    <p class="stages-sub">Essa sequência não é aleatória. Ela segue a ordem em que a inteligência emocional se desenvolve do sentir para o agir, nunca o contrário.</p>
+
+    <div class="stages-grid">
+      <div class="stage-card s1">
+        <div class="stage-num">1</div>
+        <h3>SENTIR</h3>
+        <p>Reconhecer e nomear as emoções presentes</p>
+      </div>
+      <div class="stage-card s2">
+        <div class="stage-num">2</div>
+        <h3>OBSERVAR</h3>
+        <p>Perceber o que acontece ao redor com empatia</p>
+      </div>
+      <div class="stage-card s3">
+        <div class="stage-num">3</div>
+        <h3>AGIR</h3>
+        <p>Tomar atitudes concretas de mudança</p>
+      </div>
+      <div class="stage-card s4">
+        <div class="stage-num">4</div>
+        <h3>REFLETIR</h3>
+        <p>Consolidar o aprendizado emocional</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ AUDIENCE ════════ -->
+<section class="audience">
+  <div class="container">
+    <span class="section-tag purple">Para quem é?</span>
+    <h2>FEITO PARA QUEM <span>CONVIVE COM CRIANÇAS</span></h2>
+
+    <div class="audience-grid">
+      <div class="aud-chip">👩‍🏫 Professores</div>
+      <div class="aud-chip">🧠 Psicólogos</div>
+      <div class="aud-chip">📚 Assistentes Sociais</div>
+      <div class="aud-chip">🏫 Educadores</div>
+      <div class="aud-chip">👨‍👩‍👧 Pais e Mães</div>
+    </div>
+
+    <p class="audience-cta-text" style="margin-bottom:28px;">Veja como as perguntas tocam a realidade das crianças</p>
+
+   <img src="public/cards2.jpg" alt="Jornada 4 etapas" style="width:100%;max-width:560px;border-radius:var(--radius);box-shadow:var(--shadow);display:block;margin:0 auto;" />
+
+    <p class="audience-cta-text" style="font-style:italic;color:#999; margin-top:28px;">Os 250 Cards Anti-Bullying abrem portas para conversas que palavras comuns não conseguem...</p>
+
+  </div>
+</section>
+
+<!-- ════════ SOCIAL PROOF ════════ -->
+<section class="social-proof">
+  <div class="container">
+    <span class="section-tag pink">O que dizem quem usou</span>
+    <h2>RESULTADOS <span>REAIS</span> DE QUEM JÁ USOU</h2>
+
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Eu já tinha tentado de tudo — roda de conversa, cartaz na parede, chamada de atenção. Nada chegava de verdade nas crianças. Na primeira semana usando os cards, uma aluna que vivia isolada pediu para sentar com o grupo. Não precisei dizer nada. A carta abriu a conversa que eu não sabia como começar.</p>
+          <div class="testi-footer">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-author">Ana Paula Ferreira</div>
+              <div class="testi-role">Professora do 3º ano · Belo Horizonte, MG</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Como psicóloga escolar, recebo crianças que mal conseguem falar sobre o que sentem. Os cards viraram meu recurso principal nos atendimentos. A linguagem é perfeita para a faixa etária — lúdica, mas profunda. Em dois meses percebi avanços que antes levavam o semestre inteiro.</p>
+          <div class="testi-footer">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--sky),var(--purple));">C</div>
+            <div>
+              <div class="testi-author">Camila Rocha</div>
+              <div class="testi-role">Psicóloga Escolar · São Paulo, SP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Meu filho de 8 anos sofria bullying e mal conseguia explicar o que sentia. Comprei os cards sem muita expectativa. Mas na terceira sessão ele mesmo pegou uma carta e disse: "é isso que acontece comigo, mãe". Chorei. Finalmente ele tinha palavras para o que vivia.</p>
+          <div class="testi-footer">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--mint),var(--sky));">M</div>
+            <div>
+              <div class="testi-author">Mariana Souza</div>
+              <div class="testi-role">Mãe · Curitiba, PR</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Trabalhei 12 anos como pedagoga e nunca tive um recurso tão completo para lidar com bullying. As 4 etapas fazem todo sentido na prática: as crianças sentem, observam, agem e refletem — quase sem perceber que estão aprendendo. Aplico toda semana e o clima da sala mudou completamente.</p>
+          <div class="testi-footer">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--coral),var(--orange));">R</div>
+            <div>
+              <div class="testi-author">Renata Lima</div>
+              <div class="testi-role">Pedagoga · Fortaleza, CE</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Comprei achando que seria mais um material bonito que fica na gaveta. Me surpreendi: o formato em PDF facilitou muito — imprimi, recortei e em 20 minutos estava usando com minha turma. A dinâmica fluiu naturalmente. Os alunos pediram para jogar de novo na semana seguinte.</p>
+          <div class="testi-footer">
+            <div class="testi-avatar" style="background:linear-gradient(135deg,var(--purple),var(--pink));">L</div>
+            <div>
+              <div class="testi-author">Lucas Mendes</div>
+              <div class="testi-role">Professor do 5º ano · Recife, PE</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+    <div class="carousel-btns">
+      <button class="carousel-btn" id="prevBtn">‹</button>
+      <button class="carousel-btn" id="nextBtn">›</button>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ HOW IT WORKS ════════ -->
+<section class="how">
+  <div class="container">
+    <span class="section-tag green">Como funciona</span>
+    <h2>4 PASSOS RÁPIDOS PARA <span>COMEÇAR A USAR</span></h2>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Acesse os cards na plataforma</h3>
+        <img src="public/acesso.svg" alt="Acesse os cards na plataforma" style="width:100%;max-height:110px;object-fit:contain;display:block;margin-top:8px;" />
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Faça o download dos cards em PDF</h3>
+        <img src="public/pdf.svg" alt="Baixe o arquivo em PDF" style="width:100%;max-height:110px;object-fit:contain;display:block;margin-top:8px;" />
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Imprima em casa facilmente</h3>
+        <img src="public/imprimir.svg" alt="Imprima em papel" style="width:100%;max-height:110px;object-fit:contain;display:block;margin-top:8px;" />
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3>Use como preferir (plastifique para maior durabilidade)</h3>
+        <img src="public/plastico.svg" alt="Plastifique se quiser" style="width:100%;max-height:110px;object-fit:contain;display:block;margin-top:8px;" />
+      </div>
+    </div>
+
+    <p style="text-align:center;font-family:'Baloo 2',sans-serif;font-size:1.15rem;font-weight:900;color:var(--mint-d);margin-bottom:24px;">✅ E já está prontinho para usar!</p>
+
+    <div class="delivery-box">
+      <strong>Você recebe os arquivos exatamente assim!</strong>
+      <img src="public/cards3.jpg" alt="Folhas com os cards organizados" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow);display:block;margin-top:18px;" />
+      <p style="margin-top:14px;font-size:.92rem;color:var(--mid);">Os cards vêm organizados em folhas com vários cards por página, facilitando a impressão e o recorte. Esse formato otimiza o uso do papel, evitando desperdício e tornando muito mais prático!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BONUSES ════════ -->
+<section class="bonuses">
+  <div class="container">
+    <span class="section-tag purple">Só hoje</span>
+    <h2>Veja os <span>4 BÔNUS EXCLUSIVOS</span> que você GANHA adquirindo os 250 Cards Anti-Bullying HOJE</h2>
+    <p class="bonuses-sub">🎁 Tudo incluído no mesmo preço. Sem surpresas.</p>
+
+    <div class="bonuses-grid">
+
+      <!-- Bonus 1 -->
+      <div class="bonus-card">
+        <div class="bonus-badge">GRÁTIS</div>
+        <div class="bonus-num">BÔNUS 1</div>
+        <div class="img-placeholder" style="min-height:100px;margin-bottom:12px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Pack de Cartazes "Seja Gentil"</h3>
+        <p>Materiais visuais impactantes para fixar em salas de aula, corredores ou em casa, servindo como lembretes diários sobre a importância da gentileza e do respeito.</p>
+        <div class="bonus-price"><s>R$27,90</s> → <span class="free">R$0,00 HOJE</span></div>
+      </div>
+
+      <!-- Bonus 2 -->
+      <div class="bonus-card">
+        <div class="bonus-badge">GRÁTIS</div>
+        <div class="bonus-num">BÔNUS 2</div>
+        <div class="img-placeholder" style="min-height:100px;margin-bottom:12px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>Jogos Cooperativos no Combate ao Bullying</h3>
+        <p>Descubra como atividades lúdicas e sem competição podem transformar a dinâmica de grupo, ensinando valores essenciais e promovendo a união.</p>
+        <div class="bonus-price"><s>R$27,90</s> → <span class="free">R$0,00 HOJE</span></div>
+      </div>
+
+      <!-- Bonus 3 -->
+      <div class="bonus-card">
+        <div class="bonus-badge">GRÁTIS</div>
+        <div class="bonus-num">BÔNUS 3</div>
+        <div class="img-placeholder" style="min-height:100px;margin-bottom:12px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+        </div>
+        <h3>Certificado de Participação</h3>
+        <p>Reconheça seu compromisso com a causa anti-bullying e adicione um diferencial ao seu currículo profissional.</p>
+        <div class="bonus-price"><s>R$27,90</s> → <span class="free">R$0,00 HOJE</span></div>
+      </div>
+
+      <!-- Bonus 4 -->
+      <div class="bonus-card">
+        <div class="bonus-badge">GRÁTIS</div>
+        <div class="bonus-num">BÔNUS 4</div>
+        <div class="img-placeholder" style="min-height:100px;margin-bottom:12px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <h3>Scripts de Conversa Prontos: Abordando o Bullying com Confiança</h3>
+        <p>Diálogos pré-elaborados para iniciar conversas delicadas com crianças, adolescentes, outros pais ou a equipe escolar. Inclui frases-chave e abordagens para diferentes cenários, eliminando o medo de "não saber o que dizer". </p>
+        <div class="bonus-price"><s>R$27,90</s> → <span class="free">R$0,00 HOJE</span></div>
+      </div>
+
+      <!-- Bonus 5 -->
+      <div class="bonus-card">
+        <div class="bonus-badge">GRÁTIS</div>
+        <div class="bonus-num">BÔNUS 5</div>
+        <div class="img-placeholder" style="min-height:100px;margin-bottom:12px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <h3>Plano de Aula Anti-Bullying Simplificado</h3>
+        <p>Um plano de aula básico e adaptável para educadores, com sugestões de atividades rápidas e objetivos claros para uma aula introdutória sobre o tema. Ideal para quem busca uma ferramenta pronta para usar.</p>
+        <div class="bonus-price"><s>R$27,90</s> → <span class="free">R$0,00 HOJE</span></div>
+      </div>
+
+       <!-- Bonus 6 -->
+      <div class="bonus-card">
+        <div class="bonus-badge">GRÁTIS</div>
+        <div class="bonus-num">BÔNUS 6</div>
+        <div class="img-placeholder" style="min-height:100px;margin-bottom:12px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <h3>Pack de Atividades de Colorir e Reflexão (PDF)</h3>
+        <p>Mais de 50 páginas de atividades lúdicas para crianças menores, com desenhos e mensagens que promovem a empatia, o respeito e a inclusão, reforçando os valores anti-bullying de forma divertida. </p>
+        <div class="bonus-price"><s>R$27,90</s> → <span class="free">R$0,00 HOJE</span></div>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ CTA MAIN ════════ -->
+<section class="cta-main">
+  <div class="container text-center">
+    <p class="urgency-text">Amanhã vai ter outra criança no canto da sala. <strong>A diferença é o que você tem na mão quando ela precisar de você.</strong></p>
+
+    <div class="pricing-box">
+      <div class="img-placeholder" style="min-height:120px;margin-bottom:18px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Imagem do produto completo
+      </div>
+      <h3>ADQUIRINDO HOJE VOCÊ LEVA:</h3>
+      <ul class="pricing-list">
+        <li><span class="check">✅</span> <strong>250 CARDS ANTI-BULLYING</strong></li>
+        <li><span class="check">✅</span> <strong>30 dias de garantia</strong></li>
+        <li><span class="check">🎁</span> Bônus 1: Pack de Cartazes "Seja Gentil"</li>
+        <li><span class="check">🎁</span> Bônus 2: Jogos Cooperativos no Combate ao Bullying</li>
+        <li><span class="check">🎁</span> Bônus 3: Certificado de Participação</li>
+        <li><span class="check">🎁</span> Bônus 4: Scripts de Conversa Prontos: Abordando o Bullying com Confiança</li>
+        <li><span class="check">🎁</span> Bônus 5: Plano de Aula Anti-Bullying Simplificado</li>
+        <li><span class="check">🎁</span> Bônus 6: Pack de Atividades de Colorir e Reflexão</li>
+      </ul>
+      <p class="total-old">Valor total do pacote: R$197,00</p>
+      <p class="total-new">R$19,90 <small>hoje</small></p>
+    </div>
+
+    <a href="https://mundoconhecimento.mycartpanda.com/checkout/207126611:1" class="btn btn-pulse" target="_blank" rel="noopener">COMPRAR AGORA!</a>
+    <p class="btn-sub">Acesso imediato · PDF pronto para imprimir · 30 dias de garantia</p>
+  </div>
+</section>
+
+<!-- ════════ GUARANTEE ════════ -->
+<section class="guarantee">
+  <div class="container">
+    <div class="guarantee-box">
+      <div class="guarantee-icon">🛡️</div>
+      <div>
+        <h3>30 DIAS DE GARANTIA TOTAL</h3>
+        <p>Acreditamos tanto na qualidade dos 250 Cards Anti-Bullying que você tem 30 dias para experimentar sem riscos. Se usar com uma turma, em um atendimento, ou simplesmente abrir os arquivos e sentir que não valeu cada centavo, devolvemos seu dinheiro. </p><br>
+        <p><strong>Sem perguntas. Sem burocracia.</strong> O risco é 100% nosso. A transformação é sua.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAQ ════════ -->
+<section class="faq">
+  <div class="container">
+    <span class="section-tag blue">Dúvidas?</span>
+    <h2>PERGUNTAS <span>FREQUENTES</span></h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Para quais idades os cards funcionam?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Os cards foram desenvolvidos para crianças de 5 a 12 anos — do pré-escolar ao 6º ano. A linguagem é visual e acessível, adaptada para cada faixa etária dentro das 4 etapas da jornada.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          O material é físico ou digital?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Digital — você recebe os arquivos em PDF imediatamente após a compra, imprime e usa. Isso significa zero espera e custo de impressão muito abaixo de qualquer material físico pronto.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Preciso de formação específica para usar?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Não. Os cards foram pensados para professores, psicólogos, pedagogos e pais — qualquer adulto que convive com crianças consegue aplicar. Cada carta vem com orientação de uso incluída.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Por quanto tempo terei acesso ao material?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">Acesso vitalício. Você baixa os arquivos uma vez e eles são seus para sempre — imprime quantas vezes precisar, para quantas turmas quiser.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Tem garantia? E se eu não gostar?
+          <span class="faq-arrow">▼</span>
+        </button>
+        <div class="faq-a">30 dias de garantia total. Se não fizer sentido por qualquer motivo, devolvemos seu dinheiro integralmente. Sem perguntas.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FINAL CTA ════════ -->
+<section class="final-cta" id="comprar">
+  <div class="container">
+    <h2>Cada criança merece alguém que tenha a ferramenta certa na hora certa.</h2>
+    <a href="https://mundoconhecimento.mycartpanda.com/checkout/207126611:1" class="btn btn-pulse" style="font-size:1.1rem;padding:20px 44px;">🌟 QUERO OS 250 CARDS ANTI-BULLYING AGORA — R$19,90</a>
+    <p class="btn-sub">Acesso imediato · PDF pronto para imprimir · 30 dias de garantia</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>© 2026 250 Cards Anti-Bullying · Todos os direitos reservados</p>
+    <p style="margin-top:6px;">Material digital · Acesso imediato · Garantia de 30 dias</p>
+  </div>
+</footer>
+
+<script>
+  // Carousel
+  const track = document.getElementById('carouselTrack');
+  const dotsWrap = document.getElementById('carouselDots');
+  const cards = track.querySelectorAll('.testi-card');
+  let current = 0;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = (index + cards.length) % cards.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) =>
+      d.classList.toggle('active', i === current)
+    );
+  }
+
+  document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+  document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+
+  setInterval(() => goTo(current + 1), 5000);
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
