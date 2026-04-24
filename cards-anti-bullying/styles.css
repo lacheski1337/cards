@@ -512,14 +512,41 @@ section { padding: 56px 20px; }
 .urgency-text strong { color: var(--coral-d); }
 
 /* ── PRICING SUMMARY ────────────────────────── */
+.pricing-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
 .pricing-box {
   background: #fff;
   border-radius: 24px;
   padding: 36px 28px;
-  max-width: 480px;
-  margin: 0 auto 36px;
+  flex: 1 1 280px;
+  max-width: 420px;
   box-shadow: 0 10px 50px rgba(0,0,0,.12);
   border: 3px solid var(--yellow);
+  position: relative;
+}
+.pricing-box--full {
+  border-color: var(--coral);
+}
+.pricing-badge {
+  display: inline-block;
+  background: var(--yellow);
+  color: #333;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  font-size: .8rem;
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 14px;
+}
+.pricing-badge--featured {
+  background: var(--coral);
+  color: #fff;
 }
 .pricing-box .img-placeholder { min-height: 120px; margin-bottom: 18px; }
 .pricing-box h3 {
